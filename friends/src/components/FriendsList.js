@@ -25,11 +25,11 @@ class FriendsList extends Component {
     })
  }
  
- render() {console.log(this.state.friends)
+ render() {
   return (
    <div>
     {this.state.friends.map( friend => (
-     <Friend friend={friend}/>
+     <Friend friend={friend} key={friend.id}/>
     ))}
     <FriendForm />
    </div>

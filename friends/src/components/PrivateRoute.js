@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom'
-import FriendsList from './FriendsList';
+
 
 export default function(props){
  
