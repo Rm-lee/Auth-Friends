@@ -19,12 +19,16 @@ class Login extends Component {
  submitHandler = (e) => {
   e.preventDefault()
   const { username, password } = this.state
-  axios.post('http://localhost:5000/',{username, password})
+  axios.post('http://localhost:5000/api/login',{username, password})
   .then((response) => {
-   localStorage.setItem('response.data')
+   console.log(response.data.payload)
+   localStorage.setItem('token',response.data.payload)
+  })
+  .catch((err) => {
+   console.log(err)
   })
  }
- render() {console.log(this.state.username)
+ render() {
   return (
   <form onSubmit={this.submitHandler}>
    <input type="text" name="username" placeholder="Username" value={this.state.username} onChange={this.changeHandler} /><br />
