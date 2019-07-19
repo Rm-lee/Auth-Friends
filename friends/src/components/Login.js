@@ -21,9 +21,10 @@ class Login extends Component {
   const { username, password } = this.state
   axios.post('http://localhost:5000/api/login',{username, password})
   .then((response) => {
-   console.log(response.data.payload)
-   localStorage.setItem('token',response.data.payload)
+    localStorage.setItem('token',response.data.payload)
+    this.props.history.push('/')
   })
+  
   .catch((err) => {
    console.log(err)
   })

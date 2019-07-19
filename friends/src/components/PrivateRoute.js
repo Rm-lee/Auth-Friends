@@ -8,7 +8,7 @@ export default function(props){
   return (
   <Route exact path="/" props={props} render={() =>{
    const token = localStorage.getItem('token')
-    console.log(Component)
+    
    return token
           ? <Component /> 
           : <Redirect to="/login" />
