@@ -4,8 +4,8 @@ class Login extends Component {
  constructor() {
   super();
   this.state = {
-   username: '',
-   password: '',
+   username: 'Lambda School',
+   password: 'i<3Lambd4',
    isLoading: false
   }
  }
