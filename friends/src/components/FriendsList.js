@@ -1,6 +1,7 @@
 import React from 'react';
 import {useState,useEffect} from 'react'
 import axios from 'axios'
+import FriendForm from './FriendForm'
 function FriendsList(props) {
 
  const [friends, setFriends] = useState([])
@@ -25,7 +26,9 @@ return (
   <div>
    {friends.map( friend => (
     <h1>{friend.name}</h1>
+    
    ))}
+   <FriendForm />
   </div>
  );
 }

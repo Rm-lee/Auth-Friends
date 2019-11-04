@@ -14,7 +14,8 @@ function Login(props) {
    axios.post('http://localhost:5000/api/login', {username,password})
    .then((res) => {
     localStorage.setItem('token', res.data.payload)
-    console.log("success")
+    console.log(props)
+    props.history.push('/')
    })
    .catch(err => {
     console.log(err)
