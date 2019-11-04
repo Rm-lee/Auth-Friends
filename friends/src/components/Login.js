@@ -3,8 +3,8 @@ import axios from 'axios'
 import {useState} from 'react'
 function Login(props) {
   const [state, setState] = useState({
-    username: "",
-    password: "",
+    username: "Lambda School",
+    password: "i<3Lambd4",
     
   });
 
@@ -14,7 +14,10 @@ function Login(props) {
    axios.post('http://localhost:5000/api/login', {username,password})
    .then((res) => {
     localStorage.setItem('token', res.data.payload)
-    
+    console.log("success")
+   })
+   .catch(err => {
+    console.log(err)
    })
   }
 
