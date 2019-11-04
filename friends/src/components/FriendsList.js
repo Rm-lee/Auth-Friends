@@ -6,6 +6,9 @@ function FriendsList(props) {
 
  const [friends, setFriends] = useState([])
 
+ function updateFriends(newFriends){
+  setFriends(newFriends)
+ }
 
  useEffect(() => {
   const headers = {
@@ -28,7 +31,7 @@ return (
     <h1>{friend.name}</h1>
     
    ))}
-   <FriendForm />
+   <FriendForm props={props} update={updateFriends}/>
   </div>
  );
 }

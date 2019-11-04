@@ -1,6 +1,7 @@
 import React from "react";
 import axios from 'axios'
 import {useState} from 'react'
+
 function Login(props) {
   const [state, setState] = useState({
     username: "Lambda School",
@@ -14,8 +15,7 @@ function Login(props) {
    axios.post('http://localhost:5000/api/login', {username,password})
    .then((res) => {
     localStorage.setItem('token', res.data.payload)
-    console.log(props)
-    props.history.push('/')
+    props.props.history.push('/')
    })
    .catch(err => {
     console.log(err)

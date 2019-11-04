@@ -1,6 +1,9 @@
 import React from 'react';
 import {useState} from 'react'
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
+
+
 function FriendForm(props) {
  const [state, setState] = useState({
   name:"",
@@ -21,14 +24,14 @@ function FriendForm(props) {
    Authorization: token
   }})
   .then(res => {
-   setState({
+    console.log(props.update(res.data))
+    setState({
     name:'',
     age:'',
     email:'',
    })
-   console.log(props)
 
-   props.history.push('/')
+ 
   })
   .catch(err => {
    console.log(err)
